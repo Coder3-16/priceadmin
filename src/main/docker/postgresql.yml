@@ -1,0 +1,11 @@
+version: '2'
+services:
+    priceadmin-postgresql:
+        image: postgres:9.6.5
+        # volumes:
+        #     - ~/volumes/jhipster/priceadmin/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=priceadmin
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

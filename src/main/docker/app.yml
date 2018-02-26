@@ -1,0 +1,14 @@
+version: '2'
+services:
+    priceadmin-app:
+        image: priceadmin
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://priceadmin-postgresql:5432/priceadmin
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+        ports:
+            - 7780:7780
+    priceadmin-postgresql:
+        extends:
+            file: postgresql.yml
+            service: priceadmin-postgresql
